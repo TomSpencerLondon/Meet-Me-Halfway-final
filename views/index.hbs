@@ -1,0 +1,28 @@
+<div id="floating-panel">
+    <input id="address1" type="textbox" value="makers academy london">
+    <input id="address2" type="textbox" value="se83js"> <br>
+
+    <input id="cafe" type="radio" name="typeOfPlace" value="cafe"> Cafe <br>
+    <input id="restaurant" type="radio" name="typeOfPlace" value="restaurant"> Restaurant <br>
+    <input id="bar" type="radio" name="typeOfPlace" value="bar"> Bar <br>
+
+    <input id="submit" type="button" value="Find middle point">
+
+    <div id="hiddenAddress1Result" style="display:none;"></div>
+    <div id="hiddenAddress2Result" style="display:none;"></div>
+    <div id="hiddenMidpoint" style="display:none;"></div>
+</div>
+
+<div id="placesPanel">
+
+</div>
+
+<div id="map"></div>
+
+<script src="places.js"></script>
+<script src="geocoder.js"></script>
+<script src="googleMap.js"></script>
+<script src="index.js"></script>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPlFdz0hbacpZAvM9uQsg9BA8f3hks9Tc
+&callback=initializeProject&libraries=places"></script>
