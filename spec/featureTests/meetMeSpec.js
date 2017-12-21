@@ -34,4 +34,18 @@ describe('website', function(){
     });
   }, timeout);
 
+  it('can receive address 1 from the Google Maps API', function(done){
+    browser.visit("/", function(err){
+      setTimeout( function() {
+        browser
+        .fill('#address1', "makers academy london")
+        .fill('#address2', "se83js")
+        .pressButton('#submit', function(){
+          browser.assert.text('#hiddenAddress1Result', '{"lat":51.517501, "lng":-0.073298}');
+          done();
+        });
+      }, 1000);
+    });
+  }, longTimeout);
+
 });
