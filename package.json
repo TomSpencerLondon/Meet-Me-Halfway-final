@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node ./bin/www",
     "test-init": "./node_modules/jasmine/bin/jasmine.js init",
-    "test": "./node_modules/jasmine/bin/jasmine.js"
+    "test": "node ./spec/specRunner.js"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
@@ -15,6 +15,8 @@
     "hbs": "latest",
     "jasmine": "^2.8.0",
     "morgan": "~1.9.0",
-    "serve-favicon": "~2.4.5"
+    "request": "^2.83.0",
+    "serve-favicon": "~2.4.5",
+    "zombie": "^5.0.7"
   }
 }
