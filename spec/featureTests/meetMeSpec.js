@@ -48,4 +48,48 @@ describe('website', function(){
     });
   }, longTimeout);
 
+  it('can receive address 2 from the Google Maps API', function(done){
+  browser.visit("/", function(err){
+    setTimeout( function() {
+      browser
+      .fill('#address1', "makers academy london")
+      .fill('#address2', "se83js")
+      .pressButton('#submit', function() {
+          browser.assert.text('#hiddenAddress2Result', '{"lat":51.4821398,"lng":-0.020525399999996807}');
+          done();
+      });
+    }, 1000);
+  });
+}, longTimeout);
+
+it('can calculate a midpoint', function(done){
+  browser.visit("/", function(err){
+    setTimeout( function() {
+      browser
+      .fill('#address1', "makers academy london")
+      .fill('#address2', "se83js")
+      .pressButton('#submit', function() {
+          browser.assert.text('#hiddenMidpoint', '{"lat":51.49974005,"lng":-0.046903100000008635}');
+          done();
+      });
+    }, 1000);
+  });
+}, longTimeout);
+
+it('can fetch nearby cafes', function(done){
+  browser.visit("/", function(err){
+    setTimeout( function() {
+      browser
+      .fill('#address1', "makers academy london")
+      .fill('#address2', "se83js")
+      .choose('#cafe')
+      .pressButton('#submit', function() {
+          browser.assert.text('.place:first-child', 'A: Hollywood Bowl Surrey Quays');
+          done();
+      });
+    }, 1000);
+  });
+}, longTimeout);
+
+
 });
