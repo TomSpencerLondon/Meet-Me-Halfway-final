@@ -41,7 +41,7 @@ describe('website', function(){
         .fill('#address1', "makers academy london")
         .fill('#address2', "se83js")
         .pressButton('#submit', function(){
-          browser.assert.text('#hiddenAddress1Result', '{"lat":51.517501, "lng":-0.073298}');
+          browser.assert.text('#hiddenAddress1Result', '{"lat":51.5173403,"lng":-0.07328080000002046}');
           done();
         });
       }, 1000);
